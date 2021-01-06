@@ -1,0 +1,26 @@
+ <?php
+
+include 'koneksi.php';
+
+
+/*$nama=$_POST ['nama'];
+$jenis=$_POST ['jenis'];
+$berat=$_POST ['berat'];
+$alamat=$_POST ['alamat'];
+$lampiran=$_POST ['lampiran'];
+
+$sql=mysql_query("INSERT INTO bank_sampah values('','$nama','$jenis', '$berat','$alamat','$lampiran')")
+header("location: banksampah.php")*/
+
+if(isset($_POST['Kirim'])){
+  mysql_query($connect,"INSERT INTO bank_sampah set 
+    nama = '$_POST[nama]',
+    jenis ='$_POST[jenis]',
+    berat = '$_POST[berat]',
+    alamat = '$_POST[alamat]',
+    lampiran = '$_POST[lampiran]'");
+
+  echo "Data baru telah tersimpan";
+}
+
+?>
